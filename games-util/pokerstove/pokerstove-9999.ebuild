@@ -3,8 +3,8 @@
 
 EAPI=7
 
+CMAKE_MAKEFILE_GENERATOR="emake"
 inherit cmake
-CMAKE_MAKEFILE_GENERATOR=emake
 
 DESCRIPTION="PokerStove is a highly hand optimized C++ poker hand evaluation library."
 HOMEPAGE="https://github.com/andrewprock/pokerstove"
