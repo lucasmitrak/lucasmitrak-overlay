@@ -27,7 +27,7 @@ DEPEND="
 	>=dev-util/cmake-3.14
 	dev-cpp/gtest
 "
-	PATCHES=(
+PATCHES=(
 	"${FILESDIR}/remove_find_gtest.patch"
 	"${FILESDIR}/add_install.patch"
 )
