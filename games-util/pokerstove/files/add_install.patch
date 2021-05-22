@@ -1,0 +1,29 @@
+# Add 'make install'. Fixes bug #66 on github
+
+# Bug: https://github.com/andrewprock/pokerstove/issues/66
+# Found by @CircleOnCircles
+# Package: https://github.com/andrewprock/pokerstove
+# Written against tag v1.0 and branch master of andrewprock's pokerstove
+
+# Pokerstove currently has no install functionality
+# This patch adds install functionality
+# Adds install functionality by following documentation
+# Documentation: https://cmake.org/cmake/help/latest/command/install.html
+# Requires cmake version greater then or equal to 3.14
+
+# Tested locally and within a docker gentoo stage3 w/ ebuildtester
+# Written by Lucas Mitrak
+
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index f3e652a..49bba51 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -37,3 +37,8 @@ message(STATUS "Boost Libraries: ${Boost_LIBRARIES}")
+ include_directories("${PROJECT_BINARY_DIR}")
+ set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
+ add_subdirectory(src)
++install(TARGETS peval)
++install(TARGETS penum)
++install(TARGETS ps-colex)
++install(TARGETS ps-eval)
++install(TARGETS ps-lut)

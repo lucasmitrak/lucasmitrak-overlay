@@ -1,0 +1,27 @@
+# This patch was written against v1.0 of andrewprock's pokerstove available here:
+# https://github.com/andrewprock/pokerstove
+# This patch fixes two upstream bugs: #73 and #74 available here:
+# https://github.com/andrewprock/pokerstove/issues/73
+# https://github.com/andrewprock/pokerstove/issues/74
+
+# since cmake cannot detect the local gtest, the system's gtest is required to compile correctly.
+# This patch removes finding the local gtest in the package.
+# Without this patch, cmake will fail to find the local gtest during the cmake configure phase.
+# After this patch, cmake will not search for the local gtest but use the system gtest
+
+# This patch was written by Lucas Mitrak and will be made available upstream.
+# This patch was tested locally and in a docker image created by ebuildtester
+
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index f3e652a..8aca120 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -15,7 +15,7 @@ set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wno-deprecated-register")
+ # Set up gtest. This must be set up before any subdirectories are
+ # added which will use gtest.
+ add_subdirectory(src/ext/googletest)
+-find_library(gtest REQUIRED)
++#find_library(gtest REQUIRED)
+ include_directories(${GTEST_INCLUDE_DIRS})
+ link_directories(${GTEST_LIBS_DIR})
+ add_definitions("-fPIC")
