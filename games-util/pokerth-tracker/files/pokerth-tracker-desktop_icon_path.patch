@@ -1,0 +1,14 @@
+use default desktop icon path instead of custom path set in
+PokerTH_tracker.pro
+Written and tested by Lucas Mitrak.
+
+--- a/PokerTH_tracker.desktop
++++ b/PokerTH_tracker.desktop
+@@ -1,7 +1,7 @@
+ [Desktop Entry]
+ Type=Application
+ Exec=PokerTH_tracker %u
+-Icon=/usr/share/PokerTH_tracker/PokerTH_Tracker.png
++Icon=PokerTH_Tracker
+ Name=PokerTH Tracker
+ Comment=A simple statistics tool to analyse PokerTH logs.
