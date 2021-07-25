@@ -19,8 +19,6 @@ fi
 
 LICENSE="BSD"
 SLOT="0"
-IUSE="test"
-RESTRICT="!test? ( test )"
 
 DEPEND="
 	dev-libs/boost
