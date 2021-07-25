@@ -29,7 +29,10 @@ dev-qt/qttranslations:5"
 RDEPEND="${DEPEND}
 games-board/pokerth"
 
-PATCHES=( ""${FILESDIR}"/${PN}-disable_find_git.patch" )
+PATCHES=(
+	"${FILESDIR}"/${PN}-disable_find_git.patch
+	"${FILESDIR}"/${PN}-desktop_icon_path.patch
+	)
 
 src_prepare() {
 	sed -e "s/@GIT_COMMIT@/${PV}/g" misc/version.hpp.in > version.hpp
