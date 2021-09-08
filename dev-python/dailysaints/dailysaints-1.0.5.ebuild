@@ -17,7 +17,7 @@ KEYWORDS="~amd64 ~x86"
 DEPEND=""
 RDEPEND="${DEPEND}
 	dev-python/requests
-	dev-python/beautifulsoup
+	dev-python/beautifulsoup4
 "
 BDEPEND=""
 
